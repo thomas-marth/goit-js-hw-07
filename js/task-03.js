@@ -25,20 +25,16 @@ const images = [
   },
 ];
 
-const gallery = document.getElementById('gallery');
+const galleryRef = document.querySelector('#gallery');
 
 const createImageList = ({ url, alt }) => {
-  const listItem = document.createElement('li');
-  const img = document.createElement('img');
-  img.setAttribute('src', url);
-  img.setAttribute('alt', alt);
-  img.setAttribute('width', '360');
-  img.setAttribute('height', '240');
-  listItem.appendChild(img);
-  return listItem;
+  const itemsList = document.createElement('li');
+  itemsList.insertAdjacentHTML(
+    'beforeend',
+    `<img src='${url}' alt='${alt}' width='360' height='240'>`,
+  );
+  return itemsList;
 };
 
-const imagesList = images.map(image => createImageList(image));
-
-const list = document.querySelector('#gallery');
-list.append(...imagesList);
+const showGallery = images.map(image => createImageList(image));
+galleryRef.append(...showGallery);

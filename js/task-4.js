@@ -15,16 +15,31 @@ const incrementButton = document.querySelector(
 );
 const value = document.querySelector('#value');
 
-const subtract = (a, b) => a - b;
-const add = (a, b) => a + b;
+// const subtract = (a, b) => a - b;
+// const add = (a, b) => a + b;
+// let currentValue = 0;
+
+// decrementButton.addEventListener('click', () => {
+//   value.textContent = subtract(currentValue, 1);
+//   currentValue -= 1;
+// });
+
+// incrementButton.addEventListener('click', () => {
+//   value.textContent = add(currentValue, 1);
+//   currentValue += 1;
+// });
+
 let currentValue = 0;
 
-decrementButton.addEventListener('click', () => {
-  value.textContent = subtract(currentValue, 1);
-  currentValue -= 1;
-});
+const increment = () => {
+  value.textContent = currentValue += 1;
+  return currentValue;
+};
+const decrement = () => {
+  value.textContent = currentValue -= 1;
+  return currentValue;
+};
 
-incrementButton.addEventListener('click', () => {
-  value.textContent = add(currentValue, 1);
-  currentValue += 1;
-});
+incrementButton.addEventListener('click', increment);
+
+decrementButton.addEventListener('click', decrement);
