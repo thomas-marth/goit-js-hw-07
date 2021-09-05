@@ -34,6 +34,7 @@ let currentValue = 0;
 const handleIncrement = () => {
   value.textContent = currentValue += 1;
 };
+
 const handleDecrement = () => {
   if (value.textContent >= 1) {
     value.textContent = currentValue -= 1;
