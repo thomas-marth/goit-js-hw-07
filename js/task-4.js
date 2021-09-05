@@ -33,11 +33,9 @@ let currentValue = 0;
 
 const increment = () => {
   value.textContent = currentValue += 1;
-  return currentValue;
 };
 const decrement = () => {
   value.textContent = currentValue -= 1;
-  return currentValue;
 };
 
 incrementButton.addEventListener('click', increment);
