@@ -31,13 +31,15 @@ const value = document.querySelector('#value');
 
 let currentValue = 0;
 
-const increment = () => {
+const handleIncrement = () => {
   value.textContent = currentValue += 1;
 };
-const decrement = () => {
-  value.textContent = currentValue -= 1;
+const handleDecrement = () => {
+  if (value.textContent >= 1) {
+    value.textContent = currentValue -= 1;
+  }
 };
 
-incrementButton.addEventListener('click', increment);
+incrementButton.addEventListener('click', handleIncrement);
 
-decrementButton.addEventListener('click', decrement);
+decrementButton.addEventListener('click', handleDecrement);
